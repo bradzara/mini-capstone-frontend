@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { ProductsIndex } from "./ProductsIndex";
 import { ProductsNew } from "./ProductsNew";
 import { ProductsShow } from "./ProductsShow";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 import { Modal } from "./Modal";
 
 export function Content() {
@@ -64,12 +67,15 @@ export function Content() {
   useEffect(handleIndexProducts, []);
   
   return (
-    <div>
+    <main>
+      <Signup />
+      <Login />
+      <LogoutLink />
       <ProductsNew onCreateProduct={handleCreateProduct} />
       <ProductsIndex products={products} onShowProduct={handleShowProduct} />
       <Modal show={isProductsShowVisible} onClose={handleClose}>
         <ProductsShow product={currentProduct} onUpdateProduct={handleUpdateProduct} onDestroyProduct={handleDestroyProduct}/>
       </Modal>
-    </div>
+    </main>
   );
 }
