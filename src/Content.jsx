@@ -68,7 +68,7 @@ export function Content() {
   useEffect(handleIndexProducts, []);
   
   return (
-    <main>
+    <div className="container">
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
@@ -79,6 +79,6 @@ export function Content() {
       <Modal show={isProductsShowVisible} onClose={handleClose}>
         <ProductsShow product={currentProduct} onUpdateProduct={handleUpdateProduct} onDestroyProduct={handleDestroyProduct}/>
       </Modal>
-    </main>
+    </div>
   );
 }
