@@ -1,7 +1,19 @@
+import { LogoutLink } from "./LogoutLink";
 
 
 
 export function Header() {
+  let logginInStatus;
+
+  if (localStorage.jwt) {
+    console.log("I am logged in")
+    // logginInStatus = (
+    //   <>
+    //     <LogoutLink /> | 
+    //   </>
+    // )
+  }
+  
   return (
     <header>
       
